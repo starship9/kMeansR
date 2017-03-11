@@ -10,7 +10,8 @@ ggplot(kc1, aes(V1, V2, color = V3)) + geom_point()
 kCluster<-kmeans(kc1,3,nstart=10)
 kCluster
 kCluster$cluster <- as.factor(kCluster$cluster)
-ggplot(kc1, aes(V1, V2, color = kCluster$cluster, shape = kCluster$cluster)) + geom_point()
+ggplot(kc1, aes(V1, V2, color = kCluster$cluster)) + geom_point()
+ggplot(kc1, aes(V1, V2, color = kCluster$cluster)) + geom_smooth()
 #?kmeans
 
 library(cluster)
